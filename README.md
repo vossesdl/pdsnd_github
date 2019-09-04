@@ -5,7 +5,7 @@
 Bikeshare Project
 
 ### Description
-Calculates stats on bikeshare program 
+Calculates stats on bikeshare program per city. 
 
 ### Files used
 chicago.csv
