@@ -15,17 +15,40 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+      print('Hello! Let\'s explore some US bikeshare data!')
+    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    city = input("Would you like to see data for chicago, new york city, or washington? ").lower()
+    while city not in ['chicago', 'new york city', 'washington']:
+        city = input("That's not a valid city, enter again: ").lower()
 
+    choice = input("Would you like to filter the data by month, day, both, or not at all? ")
+    while choice not in ['month', 'day', 'not at all', 'both']:
+        choice = input("I don't understand, would you like to filter the data by month, day, both, or not at all? ")
+    if  choice == 'month':
+        month = input("Which month - January, February, March, April, May, or June? ").title()
+        day = 'all'
+        while month not in ['January', 'February', 'March', 'April', 'May', 'June']:
+            month = input("That's not a valid month, enter again:  ").title()
 
-    # get user input for month (all, january, february, ... , june)
+    elif choice == 'day':
+        day = input("Which day - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday? ").title()
+        month = 'all'
+        while day not in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']:
+            day = input("That's not a valid day, enter again: ").title()
 
-
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-
+    elif choice == 'both':
+        month = input("Which month - January, February, March, April, May, or June? ").title()
+        while month not in ['January', 'February', 'March', 'April', 'May', 'June']:
+            month = input("That's not a valid month, enter again:  ").title()
+        day = input("Which day - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday? ").title()
+        while day not in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']:
+            day = input("That's not a valid day, enter again: ").title()
+    elif choice == 'not at all':
+        month = 'all'
+        day = 'all'
 
     print('-'*40)
+    print(city, month, day)
     return city, month, day
 
 
