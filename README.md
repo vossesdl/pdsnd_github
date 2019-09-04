@@ -2,10 +2,10 @@
 4-9-2019
 
 ### Project Title
-Bikeshare
+Bikeshare Project
 
 ### Description
-Calculates stats on bikeshare program
+Calculates stats on bikeshare program 
 
 ### Files used
 chicago.csv
